@@ -11,7 +11,7 @@ import Home from 'containers/Home/Home'
 import ReactChildrenMap from './containers/Commons/ReactChildrenMap'
 const Search = lazyLoadComponent(() => import(/* webpackChunkName: "search" */ './containers/Search/Search'))
 const BookList = lazyLoadComponent(() => import(/* webpackChunkName: "bookList" */ './containers/BookList/BookList'))
-const Test  = lazyLoadComponent(()=>import('./containers/TestPage/Test.js'))
+const Test  = lazyLoadComponent(()=> import('./containers/TestPage/Test.js'))
 
 const App= () => {
     return (
@@ -29,10 +29,10 @@ const App= () => {
                 component={BookList}
                 path="/bookList/:bookId"
             />
-            <Route 
+            <Route
                 component={Test}
                 path="/test"
-                />
+            />
         </ReactChildrenMap>
     )
 }

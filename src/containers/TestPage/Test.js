@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import connect from 'react-redux/es/connect/connect'
-import {addNum, deleteNum} from 'actions/Test'
+import {addNum, deleteNum} from 'actions/test'
+
 @connect(
-  state => ({...state.Test}),
+  state => ({ ...state.test }),
   dispatch => bindActionCreators({addNum, deleteNum}, dispatch)
 )
 
 export default class App extends Component {
   constructor() {
     super();
-
     this.state = {};
   }
 
   render() {
-    console.log(this.props)
-    const {addNum, deleteNum, num} = this.props;
+    const { addNum, deleteNum, num } = this.props;
     return (
       <div>
         <div>{num}</div>

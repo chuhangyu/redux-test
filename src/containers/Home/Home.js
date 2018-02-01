@@ -28,7 +28,7 @@ const search = require('./files/search.svg')
 import './styles/home.less'
 
 @connect(
-    state => ({...state.home}),
+    state => ({ ...state }),
     dispatch => bindActionCreators({getBook, getNav, addhome, deletehome}, dispatch)
 )
 class Home extends React.Component {
@@ -39,7 +39,7 @@ class Home extends React.Component {
         }
     }
     componentDidMount() {
-        const { navMain, bookDetails } = this.props
+        const { navMain, bookDetails } = this.props.home
         if (isEmpty(navMain)) {
             this.props.getNav()
         }
@@ -54,7 +54,8 @@ class Home extends React.Component {
         }
     }
     render() {
-        const { navMain, bookDetails, num} = this.props
+        const { navMain, bookDetails } = this.props.home
+        const { num } = this.props.test
         const { isClickNav } = this.state
         let portalStyle = {
             width: '100%',
@@ -92,7 +93,7 @@ class Home extends React.Component {
                     </ul>
                 </div>
                 <div>
-                    <p className="style_p">专题1</p>
+                    <p className="style_p">专题{num}</p>
                     <Special />
                 </div>
                 <div>
