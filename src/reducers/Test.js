@@ -1,15 +1,19 @@
-export function Test(state={}, action) {
+const initialState = {
+  num:1
+}
+export function Test(state=initialState, action) {
   switch(action.type) {
     case 'ADD_NUM':
-    let newState1 = state;
-    console.log(state);
-    newState1.home.num = 100;
-      return newState1;
+      return {
+        ...state,
+        num: state.num+1
+      }
 
     case 'DELETE_NUM':
-    let newState = state;
-    newState.home.num = -100;
-      return newState;
+        return {
+          ...state,
+          num: state.num - 1
+        }
 
     default: return state;
   }

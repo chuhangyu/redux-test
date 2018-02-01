@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import connect from 'react-redux/es/connect/connect'
-import PropTypes from 'prop-types'
 import {addNum, deleteNum} from 'actions/Test'
-import {addhome, deletehome} from 'actions/home'
 @connect(
-  state => state,
-  dispatch => bindActionCreators({addNum, deleteNum, addhome, deletehome}, dispatch)
+  state => ({...state.Test}),
+  dispatch => bindActionCreators({addNum, deleteNum}, dispatch)
 )
 
 export default class App extends Component {
@@ -22,8 +20,8 @@ export default class App extends Component {
     return (
       <div>
         <div>{num}</div>
-        <button onClick={dispatch(addhome())}>++++++</button>
-        <button onClick={deletehome}>------</button>
+        <button onClick={addNum}>++++++</button>
+        <button onClick={deleteNum}>------</button>
       </div>
     )
   }
