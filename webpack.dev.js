@@ -7,6 +7,7 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     entry: {
         app: [
+            'babel-polyfill',
             'react-hot-loader/patch',
             `webpack-dev-server/client?http://${webpackServerConfig.host}:${webpackServerConfig.port}`,
             'webpack/hot/only-dev-server',

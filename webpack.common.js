@@ -59,7 +59,7 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
-            use: 'babel-loader'
+            use: 'babel-loader?presets[]=es2015,presets[]=react,presets[]=stage-0,plugins=transform-decorators-legacy'
         },  {
             test: /\.html$/,
             use: 'html-loader?attrs=img:src img:data-src'
