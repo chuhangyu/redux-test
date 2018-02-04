@@ -5,6 +5,7 @@ export const initState = {
     num: 0
   },
   test: {
-    num: 1
+    num: 1,
+    count:10
   }
 }

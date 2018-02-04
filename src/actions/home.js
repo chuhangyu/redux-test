@@ -4,14 +4,14 @@
 import instance from 'utils/instance'
 
 //这个叫做action，用于更新reduer中的state
-const addhome = () => ({
+export const addhome = () => ({
     type:'ADD'
 })
-const deletehome = () => ({
+export const deletehome = () => ({
     type:'DELETE'
 })
 
-const receiveNav = (response) => ({
+export const receiveNav = (response) => ({
     type: 'RECEIVE_NAV',
     navMain: response.data
 })
